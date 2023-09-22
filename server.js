@@ -7,7 +7,7 @@ const app = express();
 const http = require("http");
 const fs = require("fs");
 let user;
-fs.readFile("database/user.json", "utf8", (err,data) => {
+fs.readFile("database/user.json", "utf8", (err, data) => {
   if (err) {
     console.log("Error:",err);
   } else {
@@ -39,7 +39,7 @@ app.post('/create-item', (req, res) => {
   res.json({test: "success"});
 })
 
-app.get("/", function (req,res) {
+app.get("/local", function (req,res) {
   res.render("harid")
 });
 

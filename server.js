@@ -39,13 +39,13 @@ app.post('/create-item', (req, res) => {
   res.json({test: "success"});
 })
 
-app.get("/local", function (req,res) {
+app.get("/harid", function (req,res) {
   res.render("harid")
 });
 
 
 const server = http.createServer(app);
-let PORT = 3002;
+let PORT = 3000;
 server.listen(PORT, function () {
   console.log(`the server is running succesfully on port ${PORT}`);
 });

@@ -33,13 +33,15 @@ app.get("/author", (req, res) => {
 app.set("views", "views");
 app.set("view engine", "ejs");
 
+
+
 // #4.Routinglar.routing code
 app.post('/create-item', (req, res) => {
   console.log(req);
   res.json({test: "success"});
 })
 
-app.get("/harid", function (req,res) {
+app.get("/", function (req,res) {
   res.render("harid")
 });
 

@@ -25,34 +25,32 @@ maslahatBering(65,(err,data)=>{
   else{ console.log(data);};}); 
 console.log('passed here 1');
 
-
-
 // 10.Async function
 
 
-// async function maslahatBering(a) {
-//   if (typeof a !=="number") throw new Error("insert a number");
-//     else if(a<=20) return list[0];
-//     else if(a>20 && a<=30) return list[1];
-//         else if(a>30 && a<=40) return list[2];
-//             else if(a>40 && a<=50)return list[3];
-//                 else if(a>50 && a<=60)return list[4];
-//                 else{
-//                    return list[5];
-//                    return new Promise((resolve,rejact)=>{
-//                      setInterval(() => {
+async function maslahatBering(a) {
+  if (typeof a !=="number") throw new Error("insert a number");
+    else if(a<=20) return list[0];
+    else if(a>20 && a<=30) return list[1];
+        else if(a>30 && a<=40) return list[2];
+            else if(a>40 && a<=50)return list[3];
+                else if(a>50 && a<=60)return list[4];
+                else{
+                   return list[5];
+                   return new Promise((resolve,rejact)=>{
+                     setInterval(() => {
                        
-//                      }, interval);(()=>{
-//                        resolve(list[5]);
-//                      },5000);
-//                    }
-//                    )
-//                 }
+                     }, interval);(()=>{
+                       resolve(list[5]);
+                     },5000);
+                   }
+                   )
+                }
               
-// };
-// async function run(){
-//   let javob = await maslahatBering(61);
-//   console.log(javob);
+};
+async function run(){
+  let javob = await maslahatBering(61);
+  console.log(javob);
   
-// };
-// run();
+};
+run();

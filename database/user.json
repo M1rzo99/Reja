@@ -1,7 +1,7 @@
 {
-  "name": "Steve",
+  "name": "lucas",
   "profession": "Software Engineer",
-  "age": 20,
+  "age": 24,
   "residence": "S.Korea",
   "adress": "S.Korea,Seoul",
   "language": ["Uzbek", "Korean", "English"],
@@ -45,5 +45,6 @@
     "95$"
   ],
   "famous_words": ["World  is Beautiful with Flowers"],
-  "famous_name": ["Steve Jobs"]
+  "famous_name": ["Steve Jobs"],
+  "Software": ["Avaiable"]
 }

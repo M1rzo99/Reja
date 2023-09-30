@@ -1,5 +1,4 @@
 //  E-TASK: E-Task: Shunday function tuzing, u bitta string argumentni qabul qilib osh stringni teskari qilib return qilsin
-
 //masalan: getReverse("hello") return qilsin "olleh"
 const str = async (data)=> {
  try {
@@ -9,12 +8,12 @@ const str = async (data)=> {
     return spl;
   }
  } catch (error) {
-   throw error;
+   throw err;
  }
 }
-str("Hello ")
+str("Hello lucas")
   .then((data) => { console.log(data) })
-.catch((error)=>{console.log(`Error: ${error}`)})
+.catch((err)=>{console.log(`Error: ${err}`)})
 
 
 

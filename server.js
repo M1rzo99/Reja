@@ -5,7 +5,6 @@ const mongodb = require("mongodb")
 // for MongoDB
 let db;
 const connectionString = "mongodb://atlas-sql-6515584055fa2b0a683e929b-oip7v.a.query.mongodb.net/Reja?ssl=true&authSource=admin"
-
 mongodb.connect(connectionString, {
   useNewUrlParser: true,
   useUnifiedTopology: true,

@@ -1,10 +1,9 @@
+
 const http = require('http');
-
 const mongodb = require("mongodb")
-
 // for MongoDB
 let db;
-const connectionString = "mongodb://atlas-sql-6515584055fa2b0a683e929b-oip7v.a.query.mongodb.net/Reja?ssl=true&authSource=admin"
+const connectionString = "mongodb+srv://Mirzo:kcu87Q49fdODeRXt@cluster0.pzgqtca.mongodb.net/Reja?retryWrites=true&w=majority"
 mongodb.connect(connectionString, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -14,13 +13,14 @@ mongodb.connect(connectionString, {
     console.log("DataBase MongoDB Connection succed");
     module.exports = client;
     const app = require("./app");
+
     const server = http.createServer(app);
-let PORT = 3000;
-server.listen(PORT, function () {
-  console.log(`the server is running succesfully on port ${PORT},http://localhost:${PORT}`);
-});
+    let PORT = 3000;
+    server.listen(PORT, function () {
+      console.log(`the server is running succesfully on port ${PORT},http://localhost:${PORT}`);
+    });
   }
-})
+});
 
 
 

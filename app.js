@@ -14,10 +14,7 @@ fs.readFile("database/user.json", "utf8", (err, data) => {
     user = JSON.parse(data)
   }
 });
-
 // MONGODB connect
-
-
 
 // #1.Kirish code
 app.use(express.static("public"));
@@ -32,8 +29,6 @@ app.get("/author", (req, res) => {
   res.render("author", { user: user })
 });
 
-
-
 app.set("views", "views");
 app.set("view engine", "ejs");
 
@@ -41,9 +36,20 @@ app.set("view engine", "ejs");
 
 // #4.Routinglar.routing code
 app.post('/create-item', (req, res) => {
-  console.log(req);
+
+  console.log(req.body);
+  const new_reja = req.body.reja
+  db.collection("plans").insertOne({ reja: new_reja }, (err, data) => {
+    if (err) {
+      console.log(err);
+      res.end('Something went wrong br reja');
+    } else {
+      res.end("succesfully added");
+    }
+  });
   res.json({test: "success"});
 })
+  
 
 app.get("/", function (req,res) {
   
@@ -55,10 +61,9 @@ app.get("/", function (req,res) {
         res.end("something went wrong");
       } else {
         console.log(data);
-        res.render("reja")
+        res.render("reja",{items:data})
     }
   })
-res.render("reja")
+
 });
-// module.exports = app;
 module.exports = app;

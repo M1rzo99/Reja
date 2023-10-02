@@ -52,7 +52,7 @@ app.post('/create-item', (req, res) => {
   
 
 app.get("/", function (req,res) {
-  
+  console.log("user entered /");
   db.collection("plans")
     .find()
     .toArray((err, data) => {

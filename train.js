@@ -17,3 +17,5 @@ function lettersFind(str) {
 console.log( lettersFind("lucas")); 
 console.log(lettersFind("lolo")); 
 console.log(lettersFind("MIT"));
+
+console.log('it text test for gitub how its working')

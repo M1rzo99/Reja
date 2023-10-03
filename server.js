@@ -1,6 +1,6 @@
 
 const http = require('http');
-const mongodb = require("mongodb")
+const mongodb = require("mongodb");
 // for MongoDB
 let db;
 const connectionString = "mongodb+srv://Mirzo:kcu87Q49fdODeRXt@cluster0.pzgqtca.mongodb.net/Reja?retryWrites=true&w=majority"
@@ -10,7 +10,7 @@ mongodb.connect(connectionString, {
 }, (err, client) => {
   if (err) console.log("Error connection MongoDB");
   else {
-    console.log("DataBase MongoDB Connection succed");
+    console.log("DataBase MongoDB Connection succseed");
     module.exports = client;
     const app = require("./app");
 

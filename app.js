@@ -5,7 +5,7 @@ const express = require("express");
 const app = express();
 const http = require("http");
 const fs = require("fs");
-const db = require("./server").db();
+
 let user;
 fs.readFile("database/user.json", "utf8", (err, data) => {
   if (err) {
@@ -15,7 +15,8 @@ fs.readFile("database/user.json", "utf8", (err, data) => {
   }
 });
 // MONGODB connect
-
+const db = require("./server").db();
+const mongodb = require("mongodb") // new mongodb ichida obj id lar kerak
 // #1.Kirish code
 app.use(express.static("public"));
 app.use(express.json());
@@ -45,6 +46,15 @@ app.post('/create-item', (req, res) => {
   });
   
 })
+
+// button id larini olayapmiz.
+app.post("/delete-item", (req, res) => {
+  const id = req.body.id;
+  db.collection("plans").deleteOne(
+    { _id: new mongodb.ObjectId(id) },
+    (err, data) => { res.json({ state: "success" }) })
+ })
+
   
 
 app.get("/", function (req,res) {
@@ -62,4 +72,28 @@ app.get("/", function (req,res) {
   })
 
 });
+
+// for O'zgartirish(in browser.js) button
+app.post("/edit-item", (req, res) => {
+  const data = req.body
+  console.log(data);
+  db.collection("plans").findOneAndUpdate({ _id: new mongodb.ObjectId(data.id) },
+    { $set: { reja: data.new_input } },
+    function (err, data) {
+      res.json({ state: "success" })
+    })
+});
+
+// Clean all btn uchun app
+app.post("/delete-all", (req, res) => {
+  if (req.body.delete_all) {
+    db.collection("plans").deleteMany(() => {
+      res.json({state:"Hamma rejalar o'chirildi"})
+    })
+  }
+})
+
+
+
+
 module.exports = app;

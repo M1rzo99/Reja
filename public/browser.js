@@ -78,3 +78,6 @@ document.getElementById("clean-all").addEventListener("click", () => {
     })
   .catch((err)=>{})
 })
+
+// hosting server.loyihani tekinga deploy qilamiz.
+// bularni hammasi pass deb ataladi.
